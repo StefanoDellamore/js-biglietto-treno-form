@@ -1,0 +1,25 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #B91450;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding:20px;
+}
+
+h1 {
+    color: white;
+}
+
+.container-card {
+    margin-top: 50px;
+    background-color: white;
+    width: 80%;
+}
