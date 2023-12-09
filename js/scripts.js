@@ -1,48 +1,54 @@
+const km = document.getElementById ('km');
+console.log ('km', km, typeof km);
 
-// click-button
+const age = document.getElementById ('age');
+console.log ('age', age, typeof age);
 
-const myButton = document.getElementById('generates');
+const calcButton = document.getElementById ('calc-button');
+console.log ('calcButton', calcButton, typeof calcButton);
 
-myButton.addEventListener('click', function() {
+calcButton.addEventListener ('click', function(){
+    const kmInNumber = parseInt(km.value)
+    const ageInNumber = parseInt(age.value)
 
-    //id utente
-    const idInput = document.getElementById('id');
+    //prezzo biglietto base
+    const price = (km * 0.21);
+    console.log ('price', price, typeof price);
 
-    console.log('idInput', idInput, typeof idInput);
-    console.log('idInput.value', idInput.value, typeof idInput.value);
+    let finalText = 'il prezzo del biglietto è $:';
 
-    //km da percorrere
-    const kmInput = document.getElementById('km');
-    const kmInputValue = parseInt(kmInput.value);
+    //verifivo sconto da applicare
 
-    console.log('kmInput', kmInput, typeof kmInput);
-    console.log('kmInputValue', kmInputValue, typeof kmInputValue);
+    if (age < 18) {
+        
+        //applico 20% di sconto
+        const discount = (price / 100) * 20;
+        console.log ('discount', discount, typeof discount);
+        
+        //prezzo scontato
+        const discountedPrice = price - discount;
+        console.log ('discountedPrice', discountedPrice, typeof discountedPrice);
+        finalText = finalText + discountedPrice.toFixed(2);
+    }
 
-    idInput.value = '';
-    kmInput.value = '';
-});
+    else if (age > 65) {
+        //applico 40% di sconto
+        const discount = (price / 100) * 40;
+        console.log ('discount', discount, typeof discount);
+        
+        //prezzo scontato
+        const discountedPrice = price - discount;
+        console.log ('discountedPrice', discountedPrice, typeof discountedPrice);
+        finalText = finalText + discountedPrice.toFixed(2); 
+    }
 
+    else {
+        finalText = finalText + price.toFixed(2);
+    }
 
+    const resultContainer = document.querySelector ('#result-container');
+    console.log ('resultContainer', resultContainer, typeof resultContainer);
+    resultContainer.innerHTML = finalText;
 
+    });
 
-//variabile-saldi con sconto
-
-let variabileSaldo = 'km' * 0.21
-let variabileSaldoMinore = 'km' - (('km' / 100) * 20 );
-let variabileSaldoOver = 'km' - (('km' / 100) * 40 );
-
-//verifico sconto da applicare
-//se l'utente è minorenne
-if (isNaN('id'))
-if ('id' < 18) {
-    console.log ('prezzo:', variabileSaldoMinore.toFixed(2));
-}   
-
-//se l'utente è over65
-else if ('id' >= 65) {
-    console.log ('prezzo:', variabileSaldoOver.toFixed(2));
-}
-
-else {
-    console.log ('prezzo:', variabileSaldo.toFixed(2));
-}

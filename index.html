@@ -14,48 +14,30 @@
                         CALCOLA IL PREZZO DEL TUO BIGLIETTO
                     </h1>
             </header>
+           
             <main>
-                <div class="container-card">
-
-                    <form>
-                        <div>
-                            <label for="id">
-                                Nome e Cognome
-                                
-                            </label>
-                            <input id="id" name="id" type="text" placeholder="Inserisci nome e cognome...">
-                        </div>
-                        
-                        <div>
-                            <label for="km">
-                                Km da percorrere
-                                
-                            </label>
-                            <input id="km" name="km" type="number" placeholder="Inserisci km...">
-                        </div>
-                    
-                        <div>
-                            <button type="button" id="generates">
-                                Genera
-                            </button>
-                        </div>
-                    </form>
-
-                    <label for="età">Fascia di età</label>
-
-                    <select name="età" id="età">
-                        <option value="minorenne">MINORENNE</option>
-                        <option value="maggiorenne">MAGGIORENNE</option>
-                        <option value="over-65">OVER-65</option>
-                    </select>
-
+                <div>
+                    <label for="km">
+                        Numeri di Km da percorre
+                    </label>
+                    <input id="km" name="km" type="number" placeholder="inserire km:">
                 </div>
 
-                <div class="container-card">
-                   
+                <div>
+                    <label for="age">
+                        Inserisci la tua età:
+                    </label>
+                    <input id="age" name="age" type="number" placeholder="inserire età:">
                 </div>
+
+                <div>
+                    <button id="calc-button">
+                        calcola
+                    </button>
+                </div>
+
+                <div id="result-container"></div>
             </main>
-        </div>
             
         
         
